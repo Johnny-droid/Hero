@@ -30,15 +30,19 @@ public class Game {
         screen.refresh();
     }
 
+    private void moveHero(Position position) {
+        hero.setPosition(position);
+    }
+
     private void processKey(KeyStroke key) {
         if (key.getKeyType() == KeyType.ArrowLeft) {
-            hero.moveLeft();
+            moveHero(hero.moveLeft());
         } else if (key.getKeyType() == KeyType.ArrowRight) {
-            hero.moveRight();
+            moveHero(hero.moveRight());
         } else if (key.getKeyType() == KeyType.ArrowUp) {
-            hero.moveUp();
+            moveHero(hero.moveUp());
         } else if (key.getKeyType() == KeyType.ArrowDown) {
-            hero.moveDown();
+            moveHero(hero.moveDown());
         }
         System.out.println(key);
     }
